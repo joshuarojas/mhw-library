@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">MHW Library</string>
+
+    <string name="home_title">Bienvenido a la\nBase de datos de MHW</string>
+
+    <string name="main_drawer_title">Librearia de\nMHW</string>
+    <string name="main_drawer_home">Inicio</string>
+    <string name="main_drawer_monsters">Monstruos</string>
+    <string name="main_drawer_weapons">Armas</string>
+    <string name="main_drawer_armors">Armaduras</string>
+    <string name="main_drawer_armors_bonus">Bonus de armaduras</string>
+    <string name="main_drawer_decorations">Adornos</string>
+    <string name="main_drawer_items">Items</string>
+    <string name="main_drawer_skills">Habilidades</string>
+    <string name="main_drawer_charms">Cigua</string>
+    <string name="main_drawer_ailments">Estados alterados</string>
+    <string name="main_drawer_locations">Ubicaciones</string>
+    <string name="main_drawer_settings">Configuracion</string>
+
+    <string name="home_search_hint">Monstruos, armas, armaduras, etc…</string>
+    <string name="home_menu_icon_cn">Icono de menu</string>
+
+    <string name="home_recent_items">Entradas recientes</string>
+    <string name="home_recent_items_empty">No recent items found</string>
+
+    <string name="settings_title">Configuracion</string>
+    <string name="settings_appearance">Apariencia</string>
+    <string name="settings_language">Lenguage</string>
+    <string name="settings_theme">Modo oscuro</string>
+    <string name="settings_theme_system">Usar el tema del sistema</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_theme_dark">Oscuro</string>
+</resources>

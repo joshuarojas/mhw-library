@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MHW Library"
 include(":app")
+include(":data")
