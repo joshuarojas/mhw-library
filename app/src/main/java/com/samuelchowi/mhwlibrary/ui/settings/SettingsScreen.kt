@@ -13,7 +13,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.Card
-import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -21,7 +20,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,33 +27,30 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.samuelchowi.mhwlibrary.R
+import com.samuelchowi.mhwlibrary.ui.component.Header
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreen(modifier: Modifier = Modifier) {
+fun SettingsScreen(
+    modifier: Modifier = Modifier,
+    viewModel: SettingsViewModel = viewModel()
+) {
     val onBackPressedDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.primaryContainer,
         topBar = {
-            CenterAlignedTopAppBar(
-                colors = TopAppBarDefaults
-                    .centerAlignedTopAppBarColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
-                navigationIcon = {
+            Header(
+                navIcon = {
                     IconButton(
                         onClick = { onBackPressedDispatcher?.onBackPressed() },
                         content = {
                             Icon(
                                 imageVector = Icons.Rounded.ArrowBack,
-                                contentDescription = ""
+                                contentDescription = null
                             )
                         }
-                    )
-                },
-                title = {
-                    Text(
-                        text = stringResource(id = R.string.settings_title),
-                        style = MaterialTheme.typography.titleMedium
                     )
                 }
             )
