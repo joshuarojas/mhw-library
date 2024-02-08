@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">MHW Library</string>
+
+    <string name="home_title">Welcome to the\nMHW DataBase</string>
+
+    <string name="main_drawer_title">MHW\nLibrary</string>
+    <string name="main_drawer_home">Home</string>
+    <string name="main_drawer_monsters">Monsters</string>
+    <string name="main_drawer_weapons">Weapons</string>
+    <string name="main_drawer_armors">Armor</string>
+    <string name="main_drawer_armors_bonus">Armor bonuses</string>
+    <string name="main_drawer_decorations">Decorations</string>
+    <string name="main_drawer_items">Items</string>
+    <string name="main_drawer_skills">Skills</string>
+    <string name="main_drawer_charms">Charms</string>
+    <string name="main_drawer_ailments">Ailments</string>
+    <string name="main_drawer_locations">Locations</string>
+    <string name="main_drawer_settings">Settings</string>
+
+    <string name="home_search_hint">Monsters, weapons, armor, etc…</string>
+    <string name="home_menu_icon_cn">Menu Icon</string>
+
+    <string name="home_recent_items">Recent items</string>
+    <string name="home_recent_items_empty">No recent items found</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_theme">Dark theme</string>
+    <string name="settings_theme_system">Use system default: %s</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
 </resources>
