@@ -9,8 +9,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.samuelchowi.mhwlibrary.ui.settings.SettingsScreen
 import com.samuelchowi.mhwlibrary.ui.theme.MHWLibraryTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -20,6 +23,7 @@ class MainActivity : ComponentActivity() {
                     NavHost(navController = navController, startDestination = "/") {
                         composable("/") { MainScreen({ navController.navigate(it) }) }
                         composable("/settings") { SettingsScreen() }
+                        composable("/about") { SettingsScreen() }
                     }
                 }
             }

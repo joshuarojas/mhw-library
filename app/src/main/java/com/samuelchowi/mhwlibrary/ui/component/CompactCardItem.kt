@@ -1,6 +1,8 @@
 package com.samuelchowi.mhwlibrary.ui.component
 
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -26,7 +28,13 @@ fun CompactCardItem(
         shape = RoundedCornerShape(10.dp),
         onClick = { onClick(item()) }
     ) {
-        Icon(painter = painterResource(id = R.drawable.ic_mhw_logo), contentDescription = null)
+        Icon(
+            painter = painterResource(id = R.drawable.ic_mhw_logo),
+            contentDescription = null,
+            modifier = Modifier
+                .height(24.dp)
+                .width(24.dp)
+        )
         Text(
             text = stringResource(id = R.string.home_recent_items),
             style = MaterialTheme.typography.titleMedium
