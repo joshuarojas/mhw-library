@@ -15,6 +15,7 @@
     <string name="main_drawer_charms">Cigua</string>
     <string name="main_drawer_ailments">Estados alterados</string>
     <string name="main_drawer_locations">Ubicaciones</string>
+    <string name="main_drawer_about">Acerca de</string>
     <string name="main_drawer_settings">Configuracion</string>
 
     <string name="home_search_hint">Monstruos, armas, armaduras, etc…</string>
@@ -25,9 +26,9 @@
 
     <string name="settings_title">Configuracion</string>
     <string name="settings_appearance">Apariencia</string>
-    <string name="settings_language">Idioma</string>
+    <string name="settings_language">Idioma: %s</string>
     <string name="settings_theme">Modo oscuro</string>
-    <string name="settings_theme_system">Usar el tema del sistema</string>
+    <string name="settings_theme_system">Usar el tema del sistema: %s</string>
     <string name="settings_theme_light">Claro</string>
     <string name="settings_theme_dark">Oscuro</string>
 </resources>

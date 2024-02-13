@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,6 +36,7 @@ private val drawerItems = listOf(
     NavHomeState.Items,
     NavHomeState.Skill,
     NavHomeState.Locations,
+    NavHomeState.About,
     NavHomeState.Settings
 )
 
@@ -48,7 +50,10 @@ fun MainDrawer(
 ) {
     val scope = rememberCoroutineScope()
 
-    ModalDrawerSheet(modifier = modifier.wrapContentWidth()) {
+    ModalDrawerSheet(
+        drawerContainerColor = MaterialTheme.colorScheme.background,
+        modifier = modifier.wrapContentWidth()
+    ) {
         Column(
             modifier = modifier
                 .padding(10.dp)
@@ -93,6 +98,7 @@ fun MainDrawer(
                             icon = {
                                 Icon(
                                     painter = painterResource(item.icon),
+                                    tint = Color.Unspecified,
                                     contentDescription = null
                                 )
                             },
@@ -100,10 +106,10 @@ fun MainDrawer(
                             onClick = {
                                 scope.launch { toggleDrawer() }
                                 if (!isSelected) {
-                                    if (item == NavHomeState.Settings) {
-                                        mainNavigateTo("/settings")
-                                    } else {
-                                        drawerNavigateTo(item)
+                                    when (item) {
+                                        NavHomeState.Settings -> mainNavigateTo("/settings")
+                                        NavHomeState.About -> mainNavigateTo("/about")
+                                        else -> drawerNavigateTo(item)
                                     }
                                 }
                             },

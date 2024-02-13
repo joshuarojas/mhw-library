@@ -39,7 +39,6 @@ fun Header(
                     color = MaterialTheme.colorScheme.secondaryContainer,
                     shape = RoundedCornerShape(bottomEnd = 20.dp, bottomStart = 20.dp)
                 )
-                .padding(top = 10.dp)
         ) {
             navIcon()
 

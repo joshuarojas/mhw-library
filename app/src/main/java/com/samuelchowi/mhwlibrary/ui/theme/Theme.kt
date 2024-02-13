@@ -15,8 +15,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.samuelchowi.mhwlibrary.ui.main.MainViewModel
 
 private val LightColorScheme = lightColorScheme(
@@ -69,11 +69,11 @@ private val DarkColorScheme = darkColorScheme(
 
 @Composable
 fun MHWLibraryTheme(
-    viewModel: MainViewModel = viewModel(),
+    mainViewModel: MainViewModel = hiltViewModel(),
     content: @Composable () -> Unit
 ) {
     val isSystemDarkModeEnabled = isSystemInDarkTheme()
-    val themeData by viewModel.themeDataState.collectAsStateWithLifecycle()
+    val themeData by mainViewModel.themeDataState.collectAsStateWithLifecycle()
     val colorScheme = with(themeData) {
         when {
             isDynamicColorEnabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
@@ -82,7 +82,7 @@ fun MHWLibraryTheme(
                     if (isSystemDarkModeEnabled) dynamicDarkColorScheme(context)
                     else dynamicLightColorScheme(context)
                 } else if (isDarkThemeEnabled) {
-                    dynamicLightColorScheme(context)
+                    dynamicDarkColorScheme(context)
                 } else {
                     dynamicLightColorScheme(context)
                 }

@@ -10,7 +10,7 @@ class HomeViewModel : ViewModel() {
     private val _searchQuery = MutableStateFlow("")
     val searchQuery = _searchQuery.asStateFlow()
 
-    private val _recentItems = MutableStateFlow(listOf<String>("","","","","","","","","","","","","",""))
+    private val _recentItems = MutableStateFlow(listOf("","","","","","","","","","","","","",""))
     val recentItems = _recentItems.asStateFlow()
 
     fun userAction(event: HomeEvent) {

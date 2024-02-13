@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.samuelchowi.mhwlibrary.ui.ailments.AilmentScreen
 import com.samuelchowi.mhwlibrary.ui.armor.ArmorScreen
 import com.samuelchowi.mhwlibrary.ui.armorbonus.ArmorBonusScreen
@@ -25,20 +25,12 @@ import com.samuelchowi.mhwlibrary.ui.weapon.WeaponScreen
 @Composable
 fun MainScreen(
     navigateTo: (String) -> Unit,
-    mainViewModel: MainViewModel = viewModel()
+    mainViewModel: MainViewModel = hiltViewModel()
 ) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val toggleDrawer = suspend { drawerState.run { if (isClosed) open() else close() } }
 
     val navState by mainViewModel.navState.collectAsStateWithLifecycle()
-//    val mainNavRouteState by mainViewModel.mainNavRouteState.collectAsStateWithLifecycle()
-
-//    LaunchedEffect(key1 = mainNavRouteState) {
-//        if (mainNavRouteState.isNotEmpty()) {
-//            navigateTo(mainNavRouteState)
-//            mainViewModel.clearMainNavRouteState()
-//        }
-//    }
 
     ModalNavigationDrawer(
         modifier = Modifier.fillMaxSize(),

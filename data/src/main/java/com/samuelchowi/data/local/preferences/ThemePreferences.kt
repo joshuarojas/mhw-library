@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 interface ThemePreferences {
     val themeDataStream: MutableStateFlow<ThemeData>
-    val themeData: ThemeData
+    var themeData: ThemeData
 }
